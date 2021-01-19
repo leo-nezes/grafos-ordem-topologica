@@ -3,25 +3,26 @@ package com.lista.adjacente;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Vertice {
     private String nome;
     private List<Aresta> adjacencias;
     
     private Vertice pi; 
-    private String cor; 
+//    private String cor; 
 
     private Integer tInicial;
     private Integer tFinal;
-	
+    
+    private Integer classificacao; // 0 = Fonte; 1 = Sumidouro; 2 = Sem classificação
 
     Vertice(String nome) {
         this.nome = nome;
         this.adjacencias = new ArrayList<Aresta>();
         this.pi = null;
-        this.cor = "b";
+//        this.cor = "b";
         this.tInicial = 0;
         this.tFinal = 0;
+        this.classificacao = 2;
     }
 
     void addAdjacencia(Aresta e) {
@@ -52,13 +53,13 @@ public class Vertice {
 		this.pi = pi;
 	}
 
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
+//	public String getCor() {
+//		return cor;
+//	}
+//
+//	public void setCor(String cor) {
+//		this.cor = cor;
+//	}
 
 	public Integer gettInicial() {
 		return tInicial;
@@ -75,6 +76,13 @@ public class Vertice {
 	public void settFinal(Integer tFinal) {
 		this.tFinal = tFinal;
 	}
-    
-    
+
+	public Integer getClassificacao() {
+		return classificacao;
+	}
+
+	public void setClassificacao(Integer classificacao) {
+		this.classificacao = classificacao;
+	}
+
 }

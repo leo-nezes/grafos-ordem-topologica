@@ -8,8 +8,8 @@ public class Grafo {
 	private List<Aresta> arestas;
 
     public Grafo() {
-        vertices = new ArrayList<Vertice>();
-        arestas = new ArrayList<Aresta>();
+        this.vertices = new ArrayList<Vertice>();
+        this.arestas = new ArrayList<Aresta>();
     }
 
     public Vertice addVertice(String nome) {
@@ -19,10 +19,11 @@ public class Grafo {
     }
 
     public Aresta addAresta(Vertice origem, Vertice destino) {
-    	Aresta e = new Aresta(destino);
-        origem.addAdjacencia(e);
-        arestas.add(e);
-        return e;
+    	Aresta aresta = new Aresta(destino);
+        origem.addAdjacencia(aresta);
+        destino.setPi(origem);
+        arestas.add(aresta);
+        return aresta;
     }
 
     public String toString() {
@@ -53,6 +54,4 @@ public class Grafo {
 	public void setArestas(List<Aresta> arestas) {
 		this.arestas = arestas;
 	}
-    
-    
 }
