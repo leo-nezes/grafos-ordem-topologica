@@ -13,15 +13,15 @@ public class Grafo {
     }
 
     public Vertice addVertice(String nome) {
-        Vertice v = new Vertice(nome);
-        vertices.add(v);
-        return v;
+        Vertice vertice = new Vertice(nome);
+        vertices.add(vertice);
+        return vertice;
     }
 
     public Aresta addAresta(Vertice origem, Vertice destino) {
+    	destino.setPi(origem);
     	Aresta aresta = new Aresta(destino);
         origem.addAdjacencia(aresta);
-        destino.setPi(origem);
         arestas.add(aresta);
         return aresta;
     }
